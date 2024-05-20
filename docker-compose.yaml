@@ -1,0 +1,10 @@
+services:
+  ewm-db:
+    image: postgres:latest
+    container_name: aston-ht-jdbc
+    ports:
+      - "6541:5432"
+    environment:
+      - POSTGRES_DB=aston-ht-jdbc
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=iamroot
