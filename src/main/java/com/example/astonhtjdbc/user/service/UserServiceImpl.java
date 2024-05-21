@@ -24,13 +24,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void update(Long id,String name, String email) {
         repository.updateUser(id,name,email);
-
     }
 
     @Override
     public void delete(Long id) {
         repository.delete(id);
-
     }
 
     @Override

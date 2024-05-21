@@ -1,11 +1,8 @@
 package com.example.astonhtjdbc.user.repository;
 
-import org.springframework.stereotype.Repository;
-
 import java.sql.*;
 import java.util.ArrayList;
 
-@Repository
 public class JDBCUserRepository {
 
     private static final String URL = "jdbc:postgresql://localhost:6541/aston-ht-jdbc";
@@ -32,7 +29,6 @@ public class JDBCUserRepository {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
             String query = "UPDATE users SET name = ?, email = ? WHERE id = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                // Задайте значения для параметров запроса
                 preparedStatement.setString(1, userName);
                 preparedStatement.setString(2, userEmail);
                 preparedStatement.setLong(3, id);
